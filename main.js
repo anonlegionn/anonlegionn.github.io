@@ -47,7 +47,6 @@ let currentIndex = 0;
 
 document.querySelectorAll('.gallery').forEach(gallery => {
   const imgs = [...gallery.querySelectorAll('img')];
-
   imgs.forEach((img, index) => {
     img.addEventListener('click', () => {
       currentImages = imgs;
@@ -61,29 +60,66 @@ function openLightbox() {
   lightboxImg.src = currentImages[currentIndex].src;
   lightbox.classList.add('active');
 }
-
 function closeLightbox() {
   lightbox.classList.remove('active');
 }
-
 prevBtn.addEventListener('click', e => {
   e.stopPropagation();
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
   openLightbox();
 });
-
 nextBtn.addEventListener('click', e => {
   e.stopPropagation();
   currentIndex = (currentIndex + 1) % currentImages.length;
   openLightbox();
 });
-
 lightbox.addEventListener('click', closeLightbox);
-
 document.addEventListener('keydown', e => {
   if (!lightbox.classList.contains('active')) return;
-
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') prevBtn.click();
   if (e.key === 'ArrowRight') nextBtn.click();
+});
+
+// Navegación responsive: abrir/cerrar menú en pantallas pequeñas
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+}
+
+// Gestión de categorías: abrir/cerrar contenido al hacer clic en el título
+document.querySelectorAll('.category-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.closest('.category');
+    const expanded = category.classList.toggle('open');
+    btn.setAttribute('aria-expanded', expanded);
+  });
+});
+
+// Inicializa un slider independiente por cada grupo de paquetes
+document.querySelectorAll('.package-slider').forEach(slider => {
+  const container = slider.querySelector('.packages');
+  const prev = slider.querySelector('.packages-arrow.prev');
+  const next = slider.querySelector('.packages-arrow.next');
+  let index = 0;
+  const total = container ? container.children.length : 0;
+  function update() {
+    if (!container) return;
+    container.style.transform = `translateX(-${index * 100}%)`;
+  }
+  if (prev && next && container) {
+    prev.addEventListener('click', e => {
+      e.stopPropagation();
+      index = (index - 1 + total) % total;
+      update();
+    });
+    next.addEventListener('click', e => {
+      e.stopPropagation();
+      index = (index + 1) % total;
+      update();
+    });
+  }
 });
