@@ -62,18 +62,27 @@
     </nav>
     <!-- Hero / cabecera de la página -->
     <section class="hero">
-      <div class="hero-content animate">
+      <!-- Video de fondo: ocupa toda la sección -->
+      <!-- El video de fondo se carga desde la ruta relativa raíz. Usamos hero.mp4 directamente porque no existe la carpeta images en el contenedor. -->
+      <video class="hero-video" src="hero.mp4" autoplay loop muted playsinline preload="auto"></video>
+      <!-- Capa para oscurecer el video a medida que se hace scroll -->
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <!-- Logotipo siempre visible -->
         <img src="images/logos/agora.png" alt="AgoraLAB" class="hero-logo">
-        <h1>Diseño profesional, Estrategia e Identidad</h1>
-        <h2>Diseños que transmiten más que palabras</h2>
-        <p class="claim">Construimos identidades visuales coherentes y reconocibles. Si quieres que tu marca se destaque, estás en el lugar correcto.</p>
-        <div class="hero-actions">
-          <!-- Botón para ver el portfolio -->
-          <a href="#proyectos" class="btn primary">Ver trabajos</a>
-          <!-- Botón para ver la lista de paquetes -->
-          <a href="#paquetes" class="btn tertiary">Ver paquetes</a>
-          <!-- Botón de contacto -->
-          <a href="#contacto" class="btn secondary">Contacto</a>
+        <!-- Texto y botones, que aparecerán de forma gradual al hacer scroll -->
+        <div class="hero-text">
+          <h1>Diseño profesional, Estrategia e Identidad</h1>
+          <h2>Diseños que transmiten más que palabras</h2>
+          <p class="claim">Construimos identidades visuales coherentes y reconocibles. Si quieres que tu marca se destaque, estás en el lugar correcto.</p>
+          <div class="hero-actions">
+            <!-- Botón para ver el portfolio -->
+            <a href="#proyectos" class="btn primary">Ver trabajos</a>
+            <!-- Botón para ver la lista de paquetes -->
+            <a href="#paquetes" class="btn tertiary">Ver paquetes</a>
+            <!-- Botón de contacto -->
+            <a href="#contacto" class="btn secondary">Contacto</a>
+          </div>
         </div>
       </div>
     </section>
@@ -106,7 +115,8 @@
         </div>
       </div>
       <div class="cta-row">
-        <a href="#paquetes" class="btn primary">Ver paquetes</a>
+        <!-- Botón para contacto directo por WhatsApp -->
+        <a href="https://wa.me/34672296226" class="btn primary" target="_blank" rel="noopener">Háblanos</a>
       </div>
     </section>
 
@@ -200,7 +210,7 @@
                 <p class="price">1.600&nbsp;€/mes</p>
                 <ul class="package-features">
                   <li><i class="fa-solid fa-check"></i> 8 creatividades por semana (32/mes)</li>
-                  <li><i class="fa-solid fa-check"></i> 8 Reels mensuales incluidos</li>
+                  <li><i class="fa-solid fa-check"></i> Reels ilimitados</li>
                   <li><i class="fa-solid fa-check"></i> Edición de vídeo premium</li>
                 </ul>
                 <a href="#contacto" class="btn primary">Seleccionar</a>
@@ -333,7 +343,17 @@
     <section class="works animate" id="proyectos">
       <h2 class="centered-title">Algunos de nuestros proyectos</h2>
       <div class="project animate">
-        <h3>Carta restaurante</h3>
+        <!-- Encabezado del proyecto con título centrado y flecha para mostrar descripción -->
+        <div class="project-header">
+          <h3>Carta restaurante</h3>
+          <button class="project-toggle" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+        <!-- Descripción oculta del proyecto -->
+        <div class="project-description">
+          <p>El cliente necesitaba una carta atractiva y coherente para su restaurante. Analizamos su identidad y diseñamos un menú elegante que combina tipografías modernas y colores gastronómicos. Se trabajó con herramientas como Adobe InDesign y Photoshop para maquetar y crear ilustraciones que transmiten la esencia del restaurante y facilitan la lectura de los platos.</p>
+        </div>
         <div class="gallery collapsible" data-limit="2">
           <img src="images/carta-restaurante/carta1.png" alt="Carta restaurante imagen 1">
           <img src="images/carta-restaurante/carta2.png" alt="Carta restaurante imagen 2">
@@ -348,7 +368,17 @@
         <button class="toggle-btn">Ver más</button>
       </div>
       <div class="project animate">
-        <h3>Brandbook Natur Cosmetics</h3>
+        <!-- Encabezado del proyecto con título centrado y flecha para mostrar descripción -->
+        <div class="project-header">
+          <h3>Brandbook Natur Cosmetics</h3>
+          <button class="project-toggle" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+        <!-- Descripción oculta del proyecto -->
+        <div class="project-description">
+          <p>La marca Natur Cosmetics necesitaba consolidar su identidad y contar con una guía visual que asegurara coherencia en todas sus piezas. Creamos un brandbook con paleta de colores naturales, tipografías orgánicas, iconografía y aplicaciones de marca. Utilizamos Adobe Illustrator y Figma para diseñar cada componente, ayudando a la empresa a transmitir sus valores y mantener consistencia en la comunicación.</p>
+        </div>
         <div class="gallery collapsible vertical" data-limit="2">
           <img src="images/natur-cosmetics/natur1portada.png" alt="Natur Cosmetics portada 1">
           <img src="images/natur-cosmetics/natur2portada2.png" alt="Natur Cosmetics portada 2">
@@ -375,7 +405,17 @@
         <button class="toggle-btn">Ver más</button>
       </div>
       <div class="project animate">
-        <h3>Logotipos</h3>
+        <!-- Encabezado del proyecto con título centrado y flecha para mostrar descripción -->
+        <div class="project-header">
+          <h3>Logotipos</h3>
+          <button class="project-toggle" aria-expanded="false">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+        <!-- Descripción oculta del proyecto -->
+        <div class="project-description">
+          <p>Diversas marcas nos confiaron el diseño de sus logotipos. Analizamos sus valores y públicos objetivo para crear símbolos y tipografías que les representaran. Empleamos Illustrator y otras herramientas de bocetado digital para desarrollar propuestas personalizadas, cuidando la legibilidad y la versatilidad en distintos formatos.</p>
+        </div>
         <div class="gallery collapsible" data-limit="2">
           <img src="images/logos/agora.png" alt="Logo AgoraLAB">
           <img src="images/logos/sensualavocado.png" alt="Logo Sensual Avocado">

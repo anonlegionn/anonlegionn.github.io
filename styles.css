@@ -93,11 +93,18 @@ h1, h2, h3 {
     width: 200px;
     max-height: 0;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Remove shadow when collapsed; otherwise a small strip appears below the logo */
+    box-shadow: none;
+    /* Remove padding so a collapsed menu doesn't create a visible band */
+    padding: 0;
     transition: max-height 0.3s ease;
   }
   .nav-menu.open {
     max-height: 400px;
+    /* Apply shadow only when expanded */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Restore vertical padding when the menu is visible */
+    padding: 0.6rem 0;
   }
   .nav-toggle {
     display: block;
@@ -106,36 +113,90 @@ h1, h2, h3 {
 
 /* HERO */
 
+/* HERO
+ * La sección hero ocupa toda la altura de la ventana y contiene un video de fondo,
+ * un overlay para oscurecer el video y un contenido con logo y textos.
+ */
 .hero {
+  position: relative;
   min-height: 100vh;
-  background: linear-gradient(#1F1C2C, #278BE6);
+  width: 100%;
+  color: var(--white);
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
-  text-align: center;
-  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#1F1C2C, #278BE6);
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+  .hero-content {
+    /* En móviles desplaza más el contenido hacia arriba para compensar el espacio */
+    margin-top: -20vh;
+  }
+}
+
+/* Logotipo principal, siempre visible */
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor del texto y botones que irán apareciendo */
+.hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.6rem;
-  max-width: 760px;
-  padding: 0 1.5rem;
+  gap: 1.2rem;
+  width: 100%;
 }
 
-.hero-logo {
-  width: 120px;
+/* Inicialmente, cada elemento del texto está oculto y desplazado hacia abajo;
+ * se animará progresivamente con JS al hacer scroll. */
+.hero-text > * {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
+/* Botonera del hero */
 .hero-actions {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
 /* BOTONES */
@@ -177,7 +238,13 @@ h1, h2, h3 {
 
 /* SECCIONES */
 
-section {
+/*
+ * Only apply default padding to sections other than the hero. The hero
+ * section spans the full viewport height and should not have top
+ * padding, otherwise it introduces an unwanted white strip below the
+ * navigation bar.
+ */
+section:not(.hero) {
   padding: 5rem 8vw;
 }
 
@@ -637,4 +704,158 @@ section {
 .hero .btn.secondary:hover {
   background: #fff;
   color: var(--blue-dark);
+}
+
+/* ==================================================================== */
+/* Ajustes personalizados adicionales */
+
+/* --- Nav móvil --- */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+  .nav-menu {
+    width: 240px;
+    right: 0;
+    top: calc(100% + 8px);
+    /* Ensure no padding when collapsed; padding will be added in .open */
+    padding: 0;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  /* Add padding back when the menu is expanded */
+  .nav-menu.open {
+    padding: 0.6rem 0;
+  }
+  .nav-menu li a {
+    padding: 0.8rem 1rem;
+    width: 100%;
+  }
+  .nav-menu li + li a {
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
+/* --- Sticky navbar ocultar/mostrar --- */
+.navbar.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* --- Espaciado entre secciones --- */
+#servicios {
+  padding-bottom: 3rem;
+}
+#paquetes {
+  padding-top: 3rem;
+}
+
+/* --- Botones Ver más --- */
+.toggle-btn {
+  display: block;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  border: 2px solid var(--blue-dark);
+  background: none;
+  color: var(--blue-dark);
+  cursor: pointer;
+  text-align: center;
+}
+
+/* --- Carrusel de paquetes con flechas visibles --- */
+.package-slider {
+  overflow: visible;
+  padding: 0 2.2rem;
+  position: relative;
+}
+.package-slider .packages {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.package-slider .package-card {
+  flex: 0 0 85%;
+  margin-right: 5%;
+}
+.package-slider .packages-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--turquoise);
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+.package-slider .packages-arrow:hover {
+  background: var(--blue-dark);
+  color: #fff;
+}
+.package-slider .packages-arrow.prev {
+  left: -22px;
+}
+.package-slider .packages-arrow.next {
+  right: -22px;
+}
+@media (min-width: 768px) {
+  .package-slider .packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    transform: none !important;
+  }
+  .package-slider .package-card {
+    flex: 1 1 calc(33.333% - 1rem);
+    margin-right: 0;
+  }
+  .package-slider .packages-arrow {
+    display: none;
+  }
+}
+
+/* --- Encabezados y descripción de proyectos --- */
+.project-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.project-header h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.project-toggle {
+  background: none;
+  border: none;
+  color: var(--blue-dark);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.project.show-details .project-toggle {
+  transform: rotate(180deg);
+}
+.project-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.project.show-details .project-description {
+  max-height: 400px;
+}
+.project-description p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Ajuste de margen superior en proyectos */
+.project {
+  margin-top: 3rem;
 }
