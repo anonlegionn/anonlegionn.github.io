@@ -1,9 +1,7 @@
-// Gestión de galerías colapsables con límite de imágenes y botón Ver más
 document.querySelectorAll('.gallery.collapsible').forEach(gallery => {
   const limit = parseInt(gallery.dataset.limit);
   const images = [...gallery.querySelectorAll('img')];
   const button = gallery.parentElement.querySelector('.toggle-btn');
-  const project = gallery.closest('.project');
 
   if (images.length <= limit) {
     if (button) button.style.display = 'none';
@@ -17,23 +15,17 @@ document.querySelectorAll('.gallery.collapsible').forEach(gallery => {
     images.forEach((img, i) => {
       img.classList.toggle('visible', expanded || i < limit);
     });
-    if (button) button.textContent = expanded ? 'Ver menos' : 'Ver más';
+    button.textContent = expanded ? 'Ver menos' : 'Ver más';
   };
 
-  if (button) {
-    button.addEventListener('click', () => {
-      expanded = !expanded;
-      render();
-      if (!expanded && project) {
-        project.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  }
+  button.addEventListener('click', () => {
+    expanded = !expanded;
+    render();
+  });
 
   render();
 });
 
-// Animaciones de aparición con IntersectionObserver
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -45,7 +37,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
-// Lightbox de imágenes
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const prevBtn = document.querySelector('.lightbox-arrow.prev');
@@ -90,7 +81,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') nextBtn.click();
 });
 
-// Menú responsive
+// Navegación responsive: abrir/cerrar menú en pantallas pequeñas
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 if (navToggle && navMenu) {
@@ -99,7 +90,7 @@ if (navToggle && navMenu) {
   });
 }
 
-// Categorías de paquetes
+// Gestión de categorías: abrir/cerrar contenido al hacer clic en el título
 document.querySelectorAll('.category-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const category = btn.closest('.category');
@@ -108,33 +99,17 @@ document.querySelectorAll('.category-toggle').forEach(btn => {
   });
 });
 
-// Descripción de proyectos
-document.querySelectorAll('.project-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const project = btn.closest('.project');
-    const expanded = project.classList.toggle('show-details');
-    btn.setAttribute('aria-expanded', expanded);
-  });
-});
-
-// Carruseles con desplazamiento y arrastre
+// Inicializa un slider independiente por cada grupo de paquetes
 document.querySelectorAll('.package-slider').forEach(slider => {
   const container = slider.querySelector('.packages');
   const prev = slider.querySelector('.packages-arrow.prev');
   const next = slider.querySelector('.packages-arrow.next');
   let index = 0;
   const total = container ? container.children.length : 0;
-
   function update() {
     if (!container) return;
-    const card = container.children[0];
-    if (!card) return;
-    const style = window.getComputedStyle(card);
-    const marginRight = parseFloat(style.marginRight) || 0;
-    const cardWidth = card.offsetWidth + marginRight;
-    container.style.transform = `translateX(-${index * cardWidth}px)`;
+    container.style.transform = `translateX(-${index * 100}%)`;
   }
-
   if (prev && next && container) {
     prev.addEventListener('click', e => {
       e.stopPropagation();
@@ -146,48 +121,5 @@ document.querySelectorAll('.package-slider').forEach(slider => {
       index = (index + 1) % total;
       update();
     });
-
-    let startX = 0;
-    let dragging = false;
-    const onPointerDown = x => {
-      dragging = true;
-      startX = x;
-    };
-    const onPointerMove = x => {
-      if (!dragging) return;
-      const diff = x - startX;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-          prev.click();
-        } else {
-          next.click();
-        }
-        dragging = false;
-      }
-    };
-    const onPointerUp = () => {
-      dragging = false;
-    };
-    slider.addEventListener('mousedown', e => onPointerDown(e.clientX));
-    slider.addEventListener('mousemove', e => onPointerMove(e.clientX));
-    window.addEventListener('mouseup', onPointerUp);
-    slider.addEventListener('touchstart', e => onPointerDown(e.touches[0].clientX));
-    slider.addEventListener('touchmove', e => onPointerMove(e.touches[0].clientX));
-    window.addEventListener('touchend', onPointerUp);
-    window.addEventListener('resize', update);
   }
-  update();
-});
-
-// Navbar: oculta al bajar y aparece al subir
-const navbar = document.querySelector('.navbar');
-let previousScroll = window.pageYOffset || document.documentElement.scrollTop;
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  if (currentScroll > previousScroll && currentScroll > 100) {
-    navbar.classList.add('hidden');
-  } else if (currentScroll < previousScroll) {
-    navbar.classList.remove('hidden');
-  }
-  previousScroll = currentScroll;
 });
