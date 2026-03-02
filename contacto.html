@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto · AgoraLAB Madrid – Torrelodones</title>
+  <meta name="description" content="Contacta con AgoraLAB para tu proyecto de diseño gráfico, branding o identidad visual. Estudio en Torrelodones, Madrid. Respondemos en menos de 24 horas.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.agoralabb.com/contacto.html">
+  <meta property="og:title" content="Contacto · AgoraLAB Madrid">
+  <meta property="og:description" content="Cuéntanos tu proyecto de diseño o branding y te respondemos en 24 horas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.agoralabb.com/images/logos/agora.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SX13ZG8QXY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SX13ZG8QXY');</script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="nav-link" data-page="index.html">Inicio</a>
+      <a href="servicios.html" class="nav-link" data-page="servicios.html">Servicios</a>
+    </div>
+    <a href="index.html" class="nav-logo" aria-label="AgoraLAB inicio">
+      <img src="images/logos/agora.png" alt="AgoraLAB" width="44" height="44">
+      <span class="nav-logo-name">AgoraLAB</span>
+    </a>
+    <div class="nav-right">
+      <a href="proyectos.html" class="nav-link" data-page="proyectos.html">Proyectos</a>
+      <a href="nosotros.html" class="nav-link" data-page="nosotros.html">Nosotros</a>
+      <a href="contacto.html" class="nav-link nav-cta" data-page="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="bline"></span><span class="bline"></span><span class="bline"></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html" class="drawer-link">Inicio <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="servicios.html" class="drawer-link">Servicios <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="proyectos.html" class="drawer-link">Proyectos <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="paquetes.html" class="drawer-link">Paquetes <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="nosotros.html" class="drawer-link">Nosotros <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="contacto.html" class="drawer-cta active">Contactar ahora</a>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="hero-shapes" aria-hidden="true"><div class="hs hs1"></div><div class="hs hs2"></div></div>
+  <div class="page-hero-content">
+    <span class="tag tag-teal">Hablemos</span>
+    <h1>¿Listo para dar<br><em>el siguiente paso?</em></h1>
+    <p>Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
+  </div>
+</section>
+
+<!-- Contact section -->
+<section class="section-pad" style="background:var(--light)">
+  <div class="container">
+    <div class="contact-grid animate">
+
+      <!-- Formulario -->
+      <form class="contact-form" action="https://formspree.io/f/xdalvwgq" method="POST" id="contact-form" novalidate>
+        <h3 style="font-size:1.3rem;margin-bottom:.3rem">Envíanos un mensaje</h3>
+        <p style="color:var(--mid);font-size:.92rem;margin-bottom:1.2rem">Todos los campos marcados con * son obligatorios.</p>
+
+        <div class="form-field">
+          <label for="nombre">Nombre completo <span>*</span></label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ricardo García" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio">
+            <option value="">¿En qué podemos ayudarte?</option>
+            <option value="branding">Branding / Identidad visual</option>
+            <option value="diseno-grafico">Diseño gráfico / Packaging</option>
+            <option value="web">Diseño web</option>
+            <option value="visuales">Plan mensual de visuales</option>
+            <option value="pack-completo">Pack completo</option>
+            <option value="otro">Otro / consulta general</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="mensaje">Mensaje <span>*</span></label>
+          <textarea id="mensaje" name="message" rows="5" placeholder="Cuéntanos tu proyecto, el tipo de negocio, tus objetivos o cualquier duda que tengas…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="sub-btn">
+          <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+        </button>
+        <p class="form-ok" id="form-ok" hidden>✅ ¡Mensaje enviado! Te responderemos en menos de 24 horas.</p>
+        <p class="form-err" id="form-err" hidden>❌ Algo salió mal. Inténtalo de nuevo o escríbenos directamente por WhatsApp.</p>
+      </form>
+
+      <!-- Info lateral -->
+      <div class="contact-info animate d2">
+        <h3>Otras formas de contactar</h3>
+        <div class="c-methods">
+          <a href="/cdn-cgi/l/email-protection#a5d3c0d7d1c0ddd3ccd6d0c4c99c9ce5c2c8c4ccc98bc6cac8" class="c-method" aria-label="Enviar email">
+            <div class="c-icon gmail"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <span><span class="__cf_email__" data-cfemail="2056455254455856495355414c191960474d41494c0e434f4d">[email&#160;protected]</span></span>
+            </div>
+          </a>
+          <a href="https://wa.me/34672296226" target="_blank" rel="noopener noreferrer" class="c-method" aria-label="WhatsApp">
+            <div class="c-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+34 672 296 226</span>
+            </div>
+          </a>
+          <a href="https://instagram.com/agoralab_" target="_blank" rel="noopener noreferrer" class="c-method" aria-label="Instagram">
+            <div class="c-icon ig"><i class="fa-brands fa-instagram"></i></div>
+            <div>
+              <strong>Instagram</strong>
+              <span>@agoralab_</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Info adicional -->
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-l);padding:1.5rem;margin-bottom:1.5rem">
+          <h4 style="font-size:1rem;margin-bottom:1rem"><i class="fa-solid fa-location-dot" style="color:var(--blue);margin-right:.5rem"></i>Ubicación</h4>
+          <p style="color:var(--mid);font-size:.9rem;line-height:1.7">
+            Av. del Monte, 59<br>
+            Torrelodones, Madrid 28250<br>
+            España
+          </p>
+          <h4 style="font-size:1rem;margin-top:1.2rem;margin-bottom:.5rem"><i class="fa-solid fa-clock" style="color:var(--blue);margin-right:.5rem"></i>Horario</h4>
+          <p style="color:var(--mid);font-size:.9rem">Lunes – Viernes: 9:00 – 19:00</p>
+          <p style="color:var(--mid);font-size:.9rem">Respuesta garantizada en menos de 24h</p>
+        </div>
+
+        <!-- Mapa Torrelodones Madrid -->
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=Avenida+del+Monte+59+Torrelodones+Madrid&output=embed"
+            width="100%"
+            height="240"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="AgoraLAB – Av. del Monte 59, Torrelodones, Madrid"
+            aria-label="Mapa de ubicación AgoraLAB en Torrelodones, Madrid"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section style="background:var(--dark);padding:4rem 0;text-align:center">
+  <div class="container animate">
+    <h2 style="color:#fff;font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:1rem">
+      ¿Prefieres hablar <em style="color:var(--teal)">directamente?</em>
+    </h2>
+    <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto">
+      Escríbenos por WhatsApp ahora mismo y te atendemos en minutos.
+    </p>
+    <a href="https://wa.me/34672296226" target="_blank" rel="noopener" class="btn btn-light">
+      <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/logos/agora.png" alt="AgoraLAB"><p>Estudio creativo especializado en diseño gráfico, branding e identidad visual. Madrid.</p><div class="footer-socials"><a href="https://instagram.com/agoralab_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://wa.me/34672296226" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a><a href="/cdn-cgi/l/email-protection#b4c2d1c6c0d1ccc2ddc7c1d5d88d8df4d3d9d5ddd89ad7dbd9" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></div></div>
+      <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="paquetes.html">Paquetes</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="nosotros.html#faq">FAQ</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="/cdn-cgi/l/email-protection#c5b3a0b7b1a0bdb3acb6b0a4a9fcfc85a2a8a4aca9eba6aaa8"><span class="__cf_email__" data-cfemail="9ceaf9eee8f9e4eaf5efe9fdf0a5a5dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</span></a></li><li><a href="https://wa.me/34672296226">+34 672 296 226</a></li><li><a href="#">Av. del Monte, 59<br>Torrelodones, Madrid</a></li></ul></div>
+
+    <div class="footer-bottom"><p>© <span id="yr"></span> AgoraLAB · Todos los derechos reservados · Torrelodones, Madrid</p></div>
+  </div>
+</footer>
+<a href="https://wa.me/34672296226" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-arrow prev" id="lb-prev"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="lb-img-wrap"><img id="lb-img" alt=""></div>
+  <button class="lb-arrow next" id="lb-next"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-counter" id="lb-ctr"></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

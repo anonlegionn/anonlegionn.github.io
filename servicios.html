@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios de Diseño y Branding · AgoraLAB Madrid</title>
+  <meta name="description" content="Identidad visual, branding, diseño gráfico, packaging, diseño web y marketing digital en Madrid. Servicios creativos profesionales para tu marca.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="AgoraLAB – Ricardo Ruiz García">
+  <link rel="canonical" href="https://www.agoralabb.com/servicios.html">
+  <meta property="og:title" content="Servicios · AgoraLAB Madrid">
+  <meta property="og:description" content="Identidad visual, branding, diseño gráfico y marketing digital en Madrid.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.agoralabb.com/servicios.html">
+  <meta property="og:image" content="https://www.agoralabb.com/images/logos/agora.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SX13ZG8QXY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SX13ZG8QXY');</script>
+  <style>
+    .process { background: var(--light); }
+    .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; counter-reset:step; }
+    .process-step {
+      background:#fff; border:1px solid var(--border); border-radius:var(--r-l); padding:2rem;
+      position:relative; counter-increment:step;
+    }
+    .process-step::before {
+      content:counter(step,"0" decimal-leading-zero);
+      font-family:'Syne',sans-serif; font-size:3rem; font-weight:800;
+      color:rgba(0,83,166,.07); position:absolute; top:.8rem; right:1.2rem; line-height:1;
+    }
+    .process-step h3 { font-size:1.05rem; margin-bottom:.5rem; }
+    .process-step p { color:var(--mid); font-size:.92rem; }
+    .ps-icon { width:46px;height:46px;background:linear-gradient(135deg,var(--blue),var(--blue-l)); border-radius:var(--r-m); display:flex;align-items:center;justify-content:center; color:#fff;font-size:1.2rem;margin-bottom:1rem; }
+    .svc-detail { background:#fff; }
+    .svc-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:5rem; }
+    .svc-detail-grid:nth-child(even) .svc-detail-text { order:2; }
+    .svc-detail-grid:nth-child(even) .svc-detail-visual { order:1; }
+    @media(max-width:768px){ .svc-detail-grid{grid-template-columns:1fr;gap:2rem;} .svc-detail-grid:nth-child(even) .svc-detail-text{order:unset;} .svc-detail-grid:nth-child(even) .svc-detail-visual{order:unset;} }
+    .svc-detail-text h2 { font-size:clamp(1.7rem,3vw,2.4rem); margin-bottom:1rem; }
+    .svc-detail-text p { color:var(--mid); margin-bottom:1rem; font-size:.98rem; }
+    .svc-checklist { list-style:none; padding:0; margin:1.2rem 0; }
+    .svc-checklist li { display:flex; align-items:center; gap:.6rem; padding:.4rem 0; font-size:.94rem; border-bottom:1px solid var(--border); }
+    .svc-checklist li:last-child { border:none; }
+    .svc-checklist i { color:var(--teal-d); }
+    .svc-visual-card { background:linear-gradient(140deg,var(--blue),var(--blue-d)); border-radius:var(--r-xl); padding:3rem 2.5rem; color:#fff; text-align:center; }
+    .svc-visual-card .big-icon { font-size:4rem; color:var(--teal); margin-bottom:1rem; }
+    .svc-visual-card h3 { color:#fff; font-size:1.4rem; margin-bottom:.5rem; }
+    .svc-visual-card p { color:rgba(255,255,255,.7); font-size:.94rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html" class="nav-link" data-page="index.html">Inicio</a>
+      <a href="servicios.html" class="nav-link" data-page="servicios.html">Servicios</a>
+    </div>
+    <a href="index.html" class="nav-logo" aria-label="AgoraLAB inicio">
+      <img src="images/logos/agora.png" alt="AgoraLAB" width="44" height="44">
+      <span class="nav-logo-name">AgoraLAB</span>
+    </a>
+    <div class="nav-right">
+      <a href="proyectos.html" class="nav-link" data-page="proyectos.html">Proyectos</a>
+      <a href="nosotros.html" class="nav-link" data-page="nosotros.html">Nosotros</a>
+      <a href="contacto.html" class="nav-link nav-cta" data-page="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="bline"></span><span class="bline"></span><span class="bline"></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html" class="drawer-link">Inicio <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="servicios.html" class="drawer-link active">Servicios <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="proyectos.html" class="drawer-link">Proyectos <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="paquetes.html" class="drawer-link">Paquetes <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="nosotros.html" class="drawer-link">Nosotros <i class="fa-solid fa-arrow-right"></i></a>
+  <a href="contacto.html" class="drawer-cta">Contactar ahora</a>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="hero-shapes" aria-hidden="true"><div class="hs hs1"></div><div class="hs hs2"></div></div>
+  <div class="page-hero-content">
+    <span class="tag tag-teal">Lo que ofrecemos</span>
+    <h1>Nuestros <em>Servicios</em></h1>
+    <p>Diseño estratégico para marcas con ambición. Desde el logo hasta la tienda online.</p>
+  </div>
+</section>
+
+<!-- Servicios en detalle -->
+<section class="svc-detail section-pad">
+  <div class="container">
+
+    <div class="svc-detail-grid animate">
+      <div class="svc-detail-text">
+        <span class="tag">01</span>
+        <h2>Identidad Visual <em>& Branding</em></h2>
+        <p>Una marca no es solo un logo. Es el conjunto de elementos que hacen reconocible y memorable tu negocio. Construimos sistemas de identidad sólidos y coherentes.</p>
+        <ul class="svc-checklist">
+          <li><i class="fa-solid fa-check"></i> Diseño de logotipo y variantes</li>
+          <li><i class="fa-solid fa-check"></i> Sistema tipográfico y paleta cromática</li>
+          <li><i class="fa-solid fa-check"></i> Manual de identidad (brandbook)</li>
+          <li><i class="fa-solid fa-check"></i> Iconografía y elementos de marca</li>
+          <li><i class="fa-solid fa-check"></i> Aplicaciones gráficas (mockups, tarjetas, etc.)</li>
+        </ul>
+        <a href="paquetes.html" class="btn btn-primary">Ver paquetes de branding</a>
+      </div>
+      <div class="svc-detail-visual">
+        <div class="svc-visual-card">
+          <div class="big-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Branding Estratégico</h3>
+          <p>No diseñamos por estética, diseñamos por estrategia. Tu marca debe comunicar quién eres antes de que digas una sola palabra.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-detail-grid animate">
+      <div class="svc-detail-text">
+        <span class="tag">02</span>
+        <h2>Diseño Gráfico <em>& Producto</em></h2>
+        <p>El diseño de producto y material gráfico es el punto de contacto físico entre tu marca y tu cliente. Cuidamos cada detalle para que la experiencia sea impecable.</p>
+        <ul class="svc-checklist">
+          <li><i class="fa-solid fa-check"></i> Packaging y diseño de etiquetas</li>
+          <li><i class="fa-solid fa-check"></i> Material impreso (dípticos, folletos, catálogos)</li>
+          <li><i class="fa-solid fa-check"></i> Carteles y señalética</li>
+          <li><i class="fa-solid fa-check"></i> Mockups y presentaciones</li>
+          <li><i class="fa-solid fa-check"></i> Piezas para eventos y ferias</li>
+        </ul>
+        <a href="paquetes.html" class="btn btn-primary">Ver paquetes</a>
+      </div>
+      <div class="svc-detail-visual">
+        <div class="svc-visual-card">
+          <div class="big-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Diseño con Propósito</h3>
+          <p>Cada pieza gráfica tiene un objetivo. Diseñamos para que funcione, no solo para que se vea bien.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-detail-grid animate">
+      <div class="svc-detail-text">
+        <span class="tag">03</span>
+        <h2>Soporte Visual <em>Continuo</em></h2>
+        <p>¿Necesitas diseño de forma recurrente? Nuestros planes mensuales te dan acceso a un equipo creativo sin los costes de estructura de un equipo interno.</p>
+        <ul class="svc-checklist">
+          <li><i class="fa-solid fa-check"></i> Creatividades para redes sociales</li>
+          <li><i class="fa-solid fa-check"></i> Reels y vídeos cortos</li>
+          <li><i class="fa-solid fa-check"></i> Banners y piezas para campañas</li>
+          <li><i class="fa-solid fa-check"></i> Adaptaciones y formatos múltiples</li>
+          <li><i class="fa-solid fa-check"></i> Entrega ágil en 24–48h</li>
+        </ul>
+        <a href="paquetes.html" class="btn btn-primary">Ver planes mensuales</a>
+      </div>
+      <div class="svc-detail-visual">
+        <div class="svc-visual-card">
+          <div class="big-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Tu Equipo Creativo</h3>
+          <p>Flexibilidad y consistencia. Diseño de calidad cuando lo necesitas, sin contratos largos ni sorpresas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-detail-grid animate">
+      <div class="svc-detail-text">
+        <span class="tag">04</span>
+        <h2>Webs & <em>Marketing Digital</em></h2>
+        <p>Tu web es tu mejor comercial. Diseñamos sitios que no solo se ven bien, sino que convierten visitas en clientes.</p>
+        <ul class="svc-checklist">
+          <li><i class="fa-solid fa-check"></i> Landing pages y webs corporativas</li>
+          <li><i class="fa-solid fa-check"></i> Tiendas online (e-commerce)</li>
+          <li><i class="fa-solid fa-check"></i> SEO on-page y optimización de carga</li>
+          <li><i class="fa-solid fa-check"></i> Google Analytics y seguimiento</li>
+          <li><i class="fa-solid fa-check"></i> Estrategia y consultoría digital</li>
+        </ul>
+        <a href="paquetes.html" class="btn btn-primary">Ver paquetes web</a>
+      </div>
+      <div class="svc-detail-visual">
+        <div class="svc-visual-card">
+          <div class="big-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>Presencia Digital Real</h3>
+          <p>Diseño web estratégico, no solo estético. Optimizado para posicionar, cargar rápido y convertir.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Proceso de trabajo -->
+<section class="process section-pad">
+  <div class="container">
+    <div class="section-header animate">
+      <span class="tag">Cómo trabajamos</span>
+      <h2>Un proceso <em>claro y transparente</em></h2>
+      <p class="section-sub">Sin sorpresas ni letras pequeñas. Así es como avanzamos juntos.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step animate d1">
+        <div class="ps-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Briefing y análisis</h3>
+        <p>Entendemos tu negocio, tu público y tus objetivos antes de diseñar nada.</p>
+      </div>
+      <div class="process-step animate d2">
+        <div class="ps-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Propuesta creativa</h3>
+        <p>Desarrollamos una dirección creativa alineada con tu estrategia de marca.</p>
+      </div>
+      <div class="process-step animate d3">
+        <div class="ps-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+        <h3>Diseño y revisiones</h3>
+        <p>Trabajamos en iteraciones contigo hasta que el resultado sea perfecto.</p>
+      </div>
+      <div class="process-step animate">
+        <div class="ps-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>Entrega y lanzamiento</h3>
+        <p>Entregamos todos los archivos en los formatos que necesitas, listos para usar.</p>
+      </div>
+    </div>
+    <div class="cta-row animate">
+      <a href="contacto.html" class="btn btn-primary">Empezar un proyecto</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logos/agora.png" alt="AgoraLAB">
+        <p>Estudio creativo especializado en diseño gráfico, branding e identidad visual. Madrid.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/agoralab_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/34672296226" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="/cdn-cgi/l/email-protection#5d2b382f2938252b342e283c3164641d3a303c3431733e3230" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="paquetes.html">Paquetes</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="nosotros.html#faq">FAQ</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="/cdn-cgi/l/email-protection#1d6b786f6978656b746e687c7124245d7a707c7471337e7270"><span class="__cf_email__" data-cfemail="e096859294859896899395818cd9d9a0878d81898cce838f8d">[email&#160;protected]</span></a></li><li><a href="https://wa.me/34672296226">+34 672 296 226</a></li><li><a href="#">Av. del Monte, 59<br>Torrelodones, Madrid</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="yr"></span> AgoraLAB · Todos los derechos reservados · Torrelodones, Madrid</p></div>
+  </div>
+</footer>
+<a href="https://wa.me/34672296226" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-arrow prev" id="lb-prev"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="lb-img-wrap"><img id="lb-img" alt=""></div>
+  <button class="lb-arrow next" id="lb-next"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-counter" id="lb-ctr"></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
